@@ -14,6 +14,7 @@ export default function App() {
                 { id: 1, name: 'Shivam', role: 'Admin', job: 'Management' },
                 { id: 2, name: 'John', role: 'Admin', job: 'Management' },
                 { id: 3, name: 'John', role: 'Admin', job: 'Management' },
+                { id: 4, name: 'John', role: 'Admin', job: 'Management' },
               ]
             },
             { id: 4, name: 'Binit', role: 'Admin', job: 'Management' },

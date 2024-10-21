@@ -1,4 +1,4 @@
-import { MinusCircleIcon } from "@heroicons/react/16/solid";
+import { PlusCircleIcon } from "@heroicons/react/16/solid";
 import { useState } from "react";
 
 interface CardProps {
@@ -27,31 +27,20 @@ export default function Card({ node }: { node: CardProps }) {
                 </div>
                 {node.child && node.child.length > 0 && (
                     <button onClick={() => setIsOpen(!isOpen)} className="p-1 -m-1">
-                        {
-                            isOpen ?
-                                <>
-                                    <MinusCircleIcon
-                                        className={`size-4 text-gray-500  ${isOpen ? 'rotate-180' : ''}`}
-                                    />
-                                </>
-                                :
-                                <>
-                                    <div className="bg-gray-500 text-white size-4 text-sm rounded-full">
-                                        {node.child.length}
-                                    </div>
-                                </>
-                        }
+                        <PlusCircleIcon
+                            className={`size-4 text-gray-500  ${isOpen ? 'rotate-180' : ''}`}
+                        />
                     </button>
                 )}
             </span>
 
             {isOpen && (
                 <div>
-                    <ul className="flex justify-center">
+                    <li className="flex justify-center">
                         {node.child?.map((node) => (
                             <Card node={node} key={node.name} />
                         ))}
-                    </ul>
+                    </li>
                 </div>
             )}
         </li>
